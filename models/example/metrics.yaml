@@ -1,12 +1,13 @@
-# models/metrics.yml
-
-version: 2
+measures:
+  - name: total_sales_amount
+    description: "Total sales amount across all orders"
+    expr: total_amount
+    agg: sum
 metrics:
-  - name: total_orders
-    description: "Counts the total number of completed orders"
-    model: ref('orders') # Model to base this metric on
-    type: count
-    sql: "order_id"  # Field or expression to count
-    dimensions:
-      - customer_id
-      - order_date
+  - name: total_sales
+    description: "Total sales amount across all orders"
+    type: simple
+    label: "Total Sales"
+    type_params:
+      measure:
+        name: total_sales_amount      
