@@ -1,8 +1,3 @@
-measures:
-  - name: total_sales_amount
-    description: "Total sales amount across all orders"
-    expr: total_amount
-    agg: sum
 metrics:
   - name: total_sales
     description: "Total sales amount across all orders"
