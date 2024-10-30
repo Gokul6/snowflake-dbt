@@ -1,0 +1,13 @@
+semantic_models:
+  - name: orders
+    model: ref('orders')
+    description: "Semantic model for orders table"
+    entities:
+      - name: customer
+        type: foreign
+        expr: customer_id
+    measures:
+      - name: total_customers
+        description: "Total number of distinct customers"
+        agg: count_distinct
+        expr: customer_id

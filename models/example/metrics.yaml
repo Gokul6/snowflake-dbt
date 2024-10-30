@@ -1,8 +1,0 @@
-metrics:
-  - name: total_sales
-    description: "Total sales amount across all orders"
-    type: simple
-    label: "Total Sales"
-    type_params:
-      measure:
-        name: total_sales_amount      
