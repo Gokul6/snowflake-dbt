@@ -6,4 +6,4 @@ sources:
     schema: virat
     tables:
       - name: orders
-        description: "Raw orders data."
+        description: "raw orders data"
