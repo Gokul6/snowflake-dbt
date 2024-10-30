@@ -1,0 +1,18 @@
+semantic_models:
+  - name: orders
+    description: "A model containing order data."
+    model: ref('orders')
+    entities:
+      - name: order_id
+        type: primary
+    measures:
+      - name: total_sales_amount
+        description: "Total sales amount across all orders"
+        expr: total_amount
+        agg: sum
+    dimensions:
+      - name: order_date
+        expr: cast(ordered_at as date)
+        type: time
+        type_params:
+          time_granularity: day
