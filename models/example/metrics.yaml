@@ -1,13 +1,12 @@
-# models/metrics.yaml
+# models/metrics.yml
 
 version: 2
 metrics:
   - name: total_orders
     description: "Counts the total number of completed orders"
-    model: ref('orders')
-    label: "Total Orders"
-    calculation_method: count
-    expression: "*"
+    model: ref('orders') # Model to base this metric on
+    type: count
+    sql: "order_id"  # Field or expression to count
     dimensions:
       - customer_id
       - order_date
