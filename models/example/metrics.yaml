@@ -1,0 +1,13 @@
+# models/metrics.yaml
+
+version: 2
+metrics:
+  - name: total_orders
+    description: "Counts the total number of completed orders"
+    model: ref('orders')
+    label: "Total Orders"
+    calculation_method: count
+    expression: "*"
+    dimensions:
+      - customer_id
+      - order_date
