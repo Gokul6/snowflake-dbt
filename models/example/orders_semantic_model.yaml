@@ -1,13 +1,21 @@
 semantic_models:
   - name: orders
     model: ref('orders')
-    description: "Semantic model for orders table"
+    description: "A model containing order data."
+    defaults:
+      agg_time_dimension: metric_time
     entities:
+      - name: order_id
+        type: primary
       - name: customer
         type: foreign
         expr: customer_id
     measures:
-      - name: total_customers
-        description: "Total number of distinct customers"
-        agg: count_distinct
-        expr: customer_id
+      - name: order_total
+        agg: sum
+    dimensions:
+      - name: metric_time
+        expr: cast(order_date as date)
+        type: time
+        type_params:
+          time_granularity: day

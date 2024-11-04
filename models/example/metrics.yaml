@@ -1,0 +1,9 @@
+metrics:
+  - name: total_order_amount
+    description: Total amount of all orders
+    type: simple
+    label: Total Order Amount
+    type_params:
+      measure:
+        name: order_total
+        fill_nulls_with: 0
